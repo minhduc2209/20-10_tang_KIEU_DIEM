@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1b101f">
+  <meta name="description" content="Một món quà nhỏ, dành riêng cho một cô gái rất đáng yêu.">
+  <title>Một chút dịu dàng dành cho em ♡</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./romance.css">
+  <link rel="stylesheet" href="./experience.css">
+  <link rel="stylesheet" href="./surprises.css">
+  <link rel="stylesheet" href="./invitation.css">
+  <link rel="stylesheet" href="./welcome.css">
+  <link rel="stylesheet" href="./garden.css">
+  <link rel="stylesheet" href="./romantic-details.css">
+  <link rel="stylesheet" href="./typography.css">
+  <link rel="stylesheet" href="./polish.css">
+  <link rel="stylesheet" href="./dreamscape.css">
+</head>
+<body>
+  <canvas id="sky" aria-hidden="true"></canvas>
+  <canvas id="loveCanvas" aria-hidden="true"></canvas>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="aurora aurora-rose" aria-hidden="true"></div><div class="aurora aurora-gold" aria-hidden="true"></div>
+  <div class="floating-whispers" aria-hidden="true"><span>♡</span><span>✧</span><span>♡</span><span>✧</span></div>
+  <div class="cursor-magic" id="magicLayer" aria-hidden="true"></div><div id="romanceLayer" class="romance-layer" aria-hidden="true"><div id="globalAtmosphere" class="dream-field dream-field--global" aria-hidden="true"></div></div>
+  <section id="welcomeScene" class="welcome-scene" aria-labelledby="welcomeTitle" data-phase="waiting">
+    <header class="welcome-masthead"><span class="welcome-wordmark"><i aria-hidden="true">♡</i> Gửi em</span><span>MỘT MÓN QUÀ ĐẶC BIỆT</span></header>
+    <div class="welcome-stage">
+      <div class="welcome-copy">
+        <p class="welcome-recipient"><span class="welcome-dot" aria-hidden="true"></span>Gửi <span id="welcomeRecipient">cô gái đáng yêu</span> <span aria-hidden="true">♡</span></p>
+        <p class="welcome-eyebrow">HÔM NAY, CHO PHÉP ANH GỬI EM MỘT CHÚT DỊU DÀNG</p>
+        <h1 id="welcomeTitle" class="welcome-title"><span id="welcomeHeading">Anh đã để dành</span><em id="welcomeHighlight">một điều cho em.</em></h1>
+        <p id="welcomeMessage" class="welcome-message">Không biết hôm nay của em thế nào. Nhưng anh mong, từ khoảnh khắc này, ngày của em sẽ có thêm một lý do thật nhỏ để mỉm cười. Có một món quà anh đã chuẩn bị, và người anh muốn gửi đến chính là em.</p>
+        <button id="startGift" class="welcome-button" type="button" aria-describedby="welcomeAudioNote"><span class="welcome-button-heart" aria-hidden="true">♡</span><span id="welcomeButtonText">Mở món quà của anh nhé</span><span class="welcome-button-arrow" aria-hidden="true">↗</span></button>
+        <p id="welcomeAudioNote" class="welcome-audio-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l11-2v13M9 8l11-2"/><ellipse cx="5.5" cy="18" rx="3.5" ry="2.5"/><ellipse cx="16.5" cy="16" rx="3.5" ry="2.5"/></svg>Chạm mở quà để nghe nhạc cùng anh.</p>
+        <p class="welcome-signature">Được chuẩn bị bởi <span id="welcomeSender">Minh Đức</span>, anh đến với em gồm cả hoa và sự chân thành.</p>
+      </div>
+      <div class="welcome-visual" aria-hidden="true">
+        <div class="welcome-halo"></div><div class="welcome-orbit"></div>
+        <span class="welcome-star star-a">✧</span><span class="welcome-star star-b">✦</span><span class="welcome-star star-c">♡</span>
+        <div class="welcome-envelope-wrap"><svg class="welcome-envelope" viewBox="0 0 560 500" focusable="false">
+          <defs><linearGradient id="welcome-paper" x2=".8" y2="1"><stop stop-color="#fffaf0"/><stop offset="1" stop-color="#edd6cf"/></linearGradient><linearGradient id="welcome-envelope-front" x2=".5" y2="1"><stop stop-color="#f4c7d0"/><stop offset="1" stop-color="#d596ad"/></linearGradient><linearGradient id="welcome-flap" x2=".4" y2="1"><stop stop-color="#f6d7dc"/><stop offset="1" stop-color="#ddadbd"/></linearGradient><radialGradient id="welcome-wax"><stop stop-color="#c787a4"/><stop offset="1" stop-color="#9e5579"/></radialGradient></defs>
+          <ellipse cx="280" cy="455" rx="190" ry="19" fill="#08071133"/>
+          <g class="welcome-envelope-body">
+            <rect x="71" y="197" width="418" height="240" rx="15" fill="#b77894"/>
+            <g class="welcome-insert-back" transform="rotate(8 280 250)"><rect x="112" y="115" width="346" height="270" rx="12" fill="#c7abc9"/><rect x="123" y="126" width="324" height="246" rx="7" fill="none" stroke="#eee0ec55"/></g>
+            <g class="welcome-insert"><g transform="rotate(-7 280 260)"><rect x="101" y="100" width="352" height="285" rx="12" fill="url(#welcome-paper)"/><rect x="113" y="112" width="328" height="260" rx="7" fill="none" stroke="#c899a24a"/><path d="M277 158C251 133 232 164 277 192C322 164 303 133 277 158Z" fill="#bd8099"/><text x="277" y="230" text-anchor="middle" class="welcome-card-title">gửi em,</text><text x="277" y="258" text-anchor="middle" class="welcome-card-line">một điều thật lòng ♡</text><path d="M220 284H334M245 300H309" stroke="#c49da1" stroke-width="1.4" stroke-linecap="round"/></g></g>
+            <path d="M71 204L280 345L489 204V422Q489 437 474 437H86Q71 437 71 422Z" fill="url(#welcome-envelope-front)"/>
+            <path d="M73 429L216 301M487 429L344 301" fill="none" stroke="#b87a934d" stroke-width="1.5"/>
+            <path class="welcome-envelope-flap" d="M72 201H488L291 344Q280 352 269 344Z" fill="url(#welcome-flap)" stroke="#e8b7c540"/>
+            <g class="welcome-wax"><circle cx="280" cy="339" r="35" fill="url(#welcome-wax)"/><circle cx="280" cy="339" r="28" fill="none" stroke="#edbed080"/><circle cx="280" cy="339" r="24" fill="none" stroke="#773c6230"/><path d="M280 331C262 314 247 337 280 358C313 337 298 314 280 331Z" fill="#f6d5df"/></g>
+          </g>
+          <g class="welcome-ribbon" fill="none" stroke="#e0b3c5" stroke-width="5" stroke-linecap="round"><path d="M427 112C390 75 368 110 427 112C464 75 486 110 427 112Z"/><path d="M423 113Q410 137 395 142M431 113Q442 138 461 142"/></g>
+        </svg></div>
+        <img class="welcome-floral" src="./assets/floral-spray.svg" alt="">
+        <div class="welcome-little-note"><span>♡</span><p>Điều anh mong nhất,<br><em>là em mỉm cười.</em></p></div>
+      </div>
+    </div>
+    <footer class="welcome-footer"><span>Một bài nhạc</span><i></i><span>Một lá thư</span><i></i><span>Một chút thương</span></footer>
+    <p id="welcomeStatus" class="sr-only" role="status"></p>
+  </section>
+  <div class="page" id="giftPage" hidden>
+    <header class="header">
+      <div class="wordmark"><span class="tiny-flower" aria-hidden="true">✿</span><span>Gửi em<span class="wordmark-note">một điều nhỏ xinh</span></span></div>
+      <div class="music-player" role="group" aria-label="Điều khiển nhạc">
+        <button id="playPause" class="icon-button" aria-label="Phát nhạc" aria-pressed="false"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path id="playIcon" d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
+        <div class="track"><span id="musicTitle">Tâm tư của anh</span><span id="musicState" class="track-status">Chạm để nghe cùng anh nhó</span></div>
+        <span class="audio-divider" aria-hidden="true"></span>
+        <button id="muteButton" class="icon-button volume-icon" aria-label="Tắt tiếng" aria-pressed="false"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z" fill="currentColor"/><path id="soundWaves" d="M16 8q4 4 0 8m3-11q7 7 0 14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button>
+        <label class="volume-wrap"><span class="sr-only">Âm lượng</span><input id="volume" type="range" min="0" max="100" step="1" value="55"><output id="volumeValue" for="volume">55%</output></label>
+      </div>
+    </header>
+    <p id="audioFeedback" class="audio-feedback" role="status"></p>
+    <main id="main">
+      <section id="introScene" class="intro-scene" aria-labelledby="introTitle" tabindex="-1">
+        <div class="intro-orbit" aria-hidden="true"><span>✧</span><div class="intro-heart">♡</div><span>✧</span></div>
+        <p class="eyebrow">ĐỢI ANH MỘT CHÚT NHÉ</p><h1 id="introTitle">Có một điều dễ thương<br>đang đến với em.</h1>
+        <div class="waiting-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+      </section>
+      <section id="wishScene" class="wish-scene scene" hidden aria-labelledby="wishTitle" tabindex="-1">
+        <div class="wish-copy">
+          <p class="eyebrow" id="eyebrowText"></p>
+          <span class="recipient">Gửi <span id="recipientName"></span> ♡</span>
+          <h1 id="wishTitle"></h1>
+          <div id="wishMessage" class="wish-message"></div>
+          <div class="sender"><span class="signature" id="senderName"></span><span class="sender-rule" aria-hidden="true"></span><span>Gửi bằng một chút chân thành</span></div>
+        </div>
+        <div id="wishAlbumSlot" class="wish-album-slot shared-album-slot"><figure id="portrait" class="portrait memory-portrait">
+          <div class="portrait-motion" id="portraitMotion">
+            <span class="memory-layer layer-one" aria-hidden="true"></span><span class="memory-layer layer-two" aria-hidden="true"></span>
+            <span class="portrait-spark spark-one" aria-hidden="true">✦</span><span class="portrait-spark spark-two" aria-hidden="true">✧</span>
+            <div class="photo-frame album-frame" id="albumFrame" role="region" aria-roledescription="trình chiếu ảnh" aria-label="Album nhỏ dành cho em" tabindex="0">
+              <span class="tape" aria-hidden="true"></span>
+              <span class="frame-glow" aria-hidden="true"></span>
+              <svg class="frame-trace" viewBox="0 0 400 540" preserveAspectRatio="none" aria-hidden="true"><rect class="frame-hairline" x="5" y="5" width="390" height="530" rx="17"/><rect class="frame-comet comet-one" x="5" y="5" width="390" height="530" rx="17" pathLength="1"/><rect class="frame-comet comet-two" x="5" y="5" width="390" height="530" rx="17" pathLength="1"/></svg>
+              <div class="photo-content" id="albumViewport" data-transition="dreamy">
+                <div id="photoFallback" class="photo-fallback" aria-hidden="true"><canvas id="heartCanvas" width="560" height="620"></canvas><span>một chút dịu dàng,<br>gửi riêng cho em.</span></div>
+                <div id="albumSlides" class="album-slides"></div><span class="photo-glass" aria-hidden="true"></span>
+                <div class="photo-vignette" aria-hidden="true"></div><span class="album-edition" id="albumEdition">a little love story</span><span id="albumCount" class="album-count" aria-hidden="true"></span>
+              </div>
+              <figcaption id="photoCaption"></figcaption>
+              <div class="album-tools" id="albumTools" hidden><button id="previousPhoto" aria-label="Xem ảnh trước">←</button><div class="album-dots" id="albumDots" role="group" aria-label="Chọn ảnh"></div><button id="pauseAlbum" aria-label="Tạm dừng chuyển ảnh" aria-pressed="false">Ⅱ</button><button id="nextPhoto" aria-label="Xem ảnh tiếp theo">→</button></div>
+              <div class="album-time" id="albumTime" aria-hidden="true"></div>
+              <span class="photo-heart" aria-hidden="true">♡</span>
+            </div>
+            <img class="frame-floral floral-left" src="./assets/floral-spray.svg" alt="" aria-hidden="true"><img class="frame-floral floral-right" src="./assets/floral-spray.svg" alt="" aria-hidden="true">
+            <span class="little-butterfly butterfly-one" aria-hidden="true"><svg viewBox="0 0 54 42"><path class="wing-left" d="M27 24C2-6-6 19 13 25C-4 43 21 47 27 24Z"/><path class="wing-right" d="M27 24C52-6 60 19 41 25C58 43 33 47 27 24Z"/><path d="M26 18l2 17m-1-17-5-7m5 7 5-7" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></span>
+            <span class="little-butterfly butterfly-two" aria-hidden="true"><svg viewBox="0 0 54 42"><path class="wing-left" d="M27 24C2-6-6 19 13 25C-4 43 21 47 27 24Z"/><path class="wing-right" d="M27 24C52-6 60 19 41 25C58 43 33 47 27 24Z"/></svg></span>
+            <span class="floating-keepsake" aria-hidden="true"><b>♡</b><span>điều anh mong nhất<br><em>là em mỉm cười.</em></span></span>
+          </div>
+          <p class="sr-only" id="albumAnnouncement" role="status"></p>
+        </figure></div>
+        <div id="specialAction" class="special-action" hidden>
+          <p class="little-note">Anh còn một điều muốn gửi em…</p>
+          <button class="primary special-button" id="openSpecial"><span class="button-heart" aria-hidden="true">♡</span><span>Lời chúc đặc biệt dành cho cô công chúa đáng yêu</span><span class="button-arrow" aria-hidden="true">↗</span></button>
+        </div>
+      </section>
+      <section id="letterScene" class="letter-scene scene" hidden aria-labelledby="letterTitle" tabindex="-1">
+        <div class="letter-masthead"><div class="letter-art-pair"><img class="letter-keepsake" src="./assets/keepsake-envelope.svg" alt="Phong bì và tấm thiệp anh đã gói riêng cho em"><img class="letter-mascot" src="./assets/bunny-love.svg" alt="" aria-hidden="true"></div><p class="eyebrow">NHỮNG ĐIỀU ANH CHƯA NÓI</p><h2>Một lá thư nhỏ,<br>một chút thương gửi em.</h2><div class="letter-photo-ribbon" data-photo-ribbon aria-label="Những tấm ảnh trong món quà"></div></div>
+        <div class="letter-layout"><div class="letter-writing">
+        <div id="openingEnvelope" class="opening-envelope" aria-hidden="true"><span class="envelope-letter"></span><span class="envelope-body"></span><span class="envelope-flap"></span><span class="envelope-seal">♡</span></div>
+        <p id="openingCaption" class="envelope-caption">Có những điều anh muốn nói với em…</p>
+        <article id="letterPaper" class="letter-paper" hidden>
+          <span class="letter-flower" aria-hidden="true">✿</span><p class="letter-overline" hidden></p>
+          <h2 id="letterTitle"></h2><div id="letterBody" class="letter-body"></div>
+          <div class="letter-sign"><span class="signature" id="letterSender">Minh Đức</span></div>
+          <button id="receiveFlowers" class="letter-next">Anh còn một món quà nhỏ nữa <span aria-hidden="true">↗</span></button>
+        </article></div><aside id="letterAlbumSlot" class="letter-album-slot shared-album-slot" aria-label="Album ảnh tiếp tục chạy cùng lá thư"></aside></div>
+      </section>
+      <section id="finalScene" class="final-scene scene" hidden aria-labelledby="finalTitle" tabindex="-1">
+        <div id="letterGardenPanel" class="garden-scene letter-garden-panel" data-phase="waiting">
+          <div class="garden-heading"><p class="garden-overline">SAU LÁ THƯ NHỎ, ANH CÒN MƯỜI HAI ĐIỀU MUỐN GỬI</p><h2 id="finalTitle">12 bông hoa,<br><em>12 lá thư dành riêng cho em.</em></h2><p id="closingText" class="closing-text"></p><p class="garden-message">Mỗi bông hoa giữ một lá thư. Mình đọc từ bông đầu tiên, từng chút một nhé; tất cả những điều anh đã chuẩn bị đều ở đây.</p></div>
+          <div id="gardenBed" class="garden-bed"><div class="garden-bed-heading"><span>MỖI BÔNG HOA · MỘT LÁ THƯ</span><span id="gardenCount" role="status">12 nụ hoa đang đợi em…</span></div><div id="gardenGrid" class="garden-grid" aria-label="Mười hai bông hoa tương ứng mười hai lá thư theo thứ tự"></div><div class="garden-ground" aria-hidden="true"></div></div>
+          <div class="garden-after"><p id="gardenNote">Những nụ hoa đang lớn lên để mở từng lá thư của anh. Em đọc theo thứ tự từ bông số 01 nhé.</p><button id="smileButton" class="primary" aria-haspopup="dialog" disabled>Đợi những nụ hoa mở thư nhé…</button><p id="smileNote" class="smile-note">Bốn bó hoa và tám lời nhắn, được giữ trọn trong mười hai lá thư.</p><p id="giftJourney" class="gift-journey"></p><button id="openInvitation" class="secret-restart" type="button" aria-label="Sự đáng iuuuu này em có muốn xem lại hongggg" hidden><span class="secret-heart" aria-hidden="true">♡</span><span class="secret-copy">Em muốn coi lại hong ???</span></button><button id="replay" class="replay">Đọc lại món quà ↻</button></div>
+        </div>
+        <div class="letter-garden-keepsakes"><div class="letter-garden-bouquet"><div class="bouquet-wrap" id="bouquet"><svg id="bouquetArt" viewBox="0 0 440 420" role="img" aria-labelledby="bouquetTitle"><title id="bouquetTitle">Bó hoa tulip hồng được vẽ dành tặng em</title><defs><linearGradient id="petal" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#ffb9d0"/><stop offset="1" stop-color="#d46590"/></linearGradient><linearGradient id="wrap" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#f8e5d7"/><stop offset="1" stop-color="#c5a198"/></linearGradient><linearGradient id="leaf" x1="0" x2="1"><stop stop-color="#638674"/><stop offset="1" stop-color="#90a589"/></linearGradient><g id="tulip"><path d="M0 0C-28-3-34-39-29-57C-17-50-8-50 0-59C8-50 17-50 29-57C34-39 28-3 0 0Z" fill="url(#petal)"/><path d="M0-5C-10-17-13-41-11-53M0-5C10-17 13-41 11-53" stroke="#ffd5e2" stroke-width="1.5" fill="none" opacity=".65"/></g></defs><ellipse cx="221" cy="390" rx="86" ry="12" fill="#c0789616"/><g class="bouquet-stems" stroke="#6e9178" stroke-width="5" fill="none" stroke-linecap="round"><path d="M218 332L128 159M218 332L170 107M218 332L225 90M218 332L280 116M218 332L320 172M218 332L215 165M218 332L260 174"/></g><g fill="url(#leaf)"><path d="M210 286C153 275 116 228 128 193C168 202 195 241 210 286Z"/><path d="M229 287C275 278 311 240 300 205C266 213 238 254 229 287Z"/><path d="M191 234C151 213 139 167 150 144C181 171 190 204 191 234Z"/><path d="M240 228C270 208 279 162 268 140C244 162 236 198 240 228Z"/></g><g class="bouquet-flowers"><use href="#tulip" transform="translate(125 162) rotate(-26)"/><use href="#tulip" transform="translate(170 119) rotate(-13)"/><use href="#tulip" transform="translate(225 100) rotate(4)"/><use href="#tulip" transform="translate(278 126) rotate(17)"/><use href="#tulip" transform="translate(318 177) rotate(31)"/><use href="#tulip" transform="translate(211 174) rotate(-4)"/><use href="#tulip" transform="translate(259 184) rotate(10)"/></g><path d="M113 217L221 356L326 217L284 373L219 390L159 371Z" fill="url(#wrap)"/><path d="M113 217L219 390L189 277Z" fill="#ffefe1" opacity=".65"/><path d="M326 217L219 390L257 277Z" fill="#b18b86" opacity=".4"/><path d="M189 333Q218 342 246 333" stroke="#c96087" stroke-width="11" fill="none"/><path d="M220 341C178 304 161 336 198 345C169 365 175 374 222 343C268 374 272 358 241 345C279 332 257 307 220 341Z" fill="#e78cac"/><path d="M218 344L205 384M225 344L241 384" stroke="#e78cac" stroke-width="8" fill="none" stroke-linecap="round"/><path d="M45 180l4-10 4 10 10 4-10 4-4 10-4-10-10-4Z M363 117l3-9 3 9 9 3-9 3-3 9-3-9-9-3Z" fill="#efc194" opacity=".8"/><path d="M66 271C51 260 41 276 66 291C91 276 80 260 66 271Z M354 255C344 247 335 259 354 270C373 259 364 247 354 255Z" fill="#ee9fba"/></svg></div><p>Một bó hoa nhỏ, vẫn ở đây cùng em.</p></div><aside id="finalAlbumSlot" class="final-album-slot shared-album-slot" aria-label="Album vẫn giữ đủ các tấm ảnh của em"></aside></div>
+      </section>
+    </main>
+    <footer class="footer"><span id="footerNote">Gửi riêng cho em, bằng cả sự chân thành.</span><span class="progress" id="progress" aria-label="Trình tự món quà"><i></i><i></i><i></i></span><span class="footer-heart" aria-hidden="true">♡</span></footer>
+  </div>
+  <dialog id="surpriseDialog" class="surprise-dialog" aria-labelledby="surpriseTitle" aria-describedby="surpriseGreeting">
+    <header class="surprise-header"><span id="surpriseChapter">NHỮNG ĐIỀU ANH ĐỂ DÀNH</span><div><button id="surpriseMusic" class="surprise-audio" aria-label="Tạm dừng nhạc">♫</button><button id="closeSurprise" class="surprise-close" aria-label="Đóng món quà">×</button></div></header>
+    <div id="letterProgress" class="letter-progress" role="progressbar" aria-label="Những lá thư em đã đọc" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0"></div>
+    <div id="journeyCurtain" class="journey-curtain" hidden><span aria-hidden="true">✿</span><p>Những lời nhắn đã khép lại…<br><em>Có một người đang đợi gặp em.</em></p></div>
+    <div id="surpriseStage" class="surprise-stage" data-phase="opening">
+      <div class="surprise-sparkles" id="surpriseSparkles" aria-hidden="true"></div><div id="loveMoment" class="love-moment" aria-hidden="true"></div>
+      <div class="surprise-visual"><div id="letterAtmosphere" class="dream-field dream-field--letter" aria-hidden="true"></div><p id="surpriseOpening" class="surprise-opening" role="status">Đợi anh mở món quà này nhé…</p><figure id="invitationPhotoCard" class="invitation-snapshot" hidden><span class="snapshot-ribbon" aria-hidden="true"></span><p class="snapshot-overline">MỘT KHOẢNH KHẮC CHẠM VÀO TRÁI TIM</p><button id="invitationPhotoButton" type="button" aria-label="Xem ảnh riêng của thiệp mời" aria-haspopup="dialog"><img id="invitationPhotoImage" alt="" hidden><span id="invitationPhotoPlaceholder" class="invitation-photo-placeholder"><span aria-hidden="true">♡</span><em>Anh để dành một khoảnh khắc<br>cho cuộc hẹn của mình.</em></span></button><figcaption id="invitationPhotoCaption"></figcaption><img class="snapshot-floral" src="./assets/floral-spray.svg" alt="" aria-hidden="true"></figure><div id="surpriseArt" class="surprise-art" aria-hidden="true"></div><span class="surprise-visual-note" id="surpriseVisualNote"></span><button id="journeyPhoto" class="journey-personal-photo" type="button" aria-haspopup="dialog"><img id="journeyPhotoImage" alt=""><span id="journeyPhotoNumber"></span></button><div class="journey-photo-ribbon letter-photo-ribbon" data-photo-ribbon aria-label="Tất cả những tấm ảnh vẫn ở đây cùng lời nhắn"></div></div>
+      <article class="surprise-letter"><span class="surprise-kicker" id="surpriseKicker"></span><h2 id="surpriseTitle" tabindex="-1"></h2><p id="surpriseGreeting" class="surprise-greeting"></p><div id="surpriseMessage" class="surprise-message"></div><dl id="partyDetails" class="party-details" hidden><div id="partyTimeRow" hidden><dt>Bữa tiệc vào lúc</dt><dd id="partyTime"></dd></div><div id="partyPlaceRow" hidden><dt>Anh chờ em</dt><dd id="partyPlace"></dd></div><div id="partyDressRow" hidden><dt>Em chỉ cần</dt><dd id="partyDress"></dd></div></dl><p id="surpriseSignature" class="surprise-signature"></p></article>
+    </div>
+    <footer class="surprise-footer"><div class="journey-navigation"><button id="previousSurprise" class="surprise-back" type="button" hidden>← Đọc lại trang trước</button><span id="journeyPage" class="journey-page"></span></div><p id="invitationHint" class="invitation-hint" hidden>Đến đây, mình đã đi hết những điều anh để dành. Khi đọc xong, em chạm nút bên dưới nhé; anh còn một lời hẹn muốn gửi. ♡</p><button id="nextSurprise" class="primary">Em đọc xong rồi, mình tiếp nhé ♡</button><p id="partyReply" class="party-reply" role="status" tabindex="-1" hidden></p><button id="restartInvitation" class="secret-restart" type="button" aria-label="Em muốn coi lại hong ???" hidden><span class="secret-heart" aria-hidden="true">♡</span><span class="secret-copy">Em muốn coi lại hong ???</span></button><button id="backToGift" class="surprise-back">Giữ điều dễ thương này lại, quay về món quà</button></footer>
+    <p id="surpriseStatus" class="sr-only" role="status"></p>
+  </dialog>
+  <dialog id="gardenPhotoDialog" class="garden-photo-dialog" aria-labelledby="gardenPhotoTitle">
+    <header><div><p>NHỮNG TẤM ẢNH ĐỒNG HÀNH CÙNG LÁ THƯ</p><h2 id="gardenPhotoTitle">Tấm ảnh trong khu vườn của em</h2></div><button id="closeGardenPhoto" type="button" aria-label="Đóng ảnh">×</button></header>
+    <div class="garden-photo-view"><img id="gardenPhotoFull" alt=""><p id="gardenPhotoError" role="status" hidden>Tấm ảnh này chưa tải được. Mình quay lại khu vườn rồi thử mở lại nhé.</p></div><p id="gardenPhotoCaption" class="garden-photo-caption"></p>
+    <footer><button id="previousGardenPhoto" type="button">← Ảnh trước</button><span id="gardenPhotoCount"></span><button id="nextGardenPhoto" type="button">Ảnh tiếp →</button></footer>
+  </dialog>
+  <audio id="music" loop preload="metadata"></audio>
+  <noscript><p class="noscript">Hãy bật JavaScript để mở món quà này nhé.</p></noscript>
+  <script src="./config.js"></script><script src="./welcome.js"></script><script src="./garden.js"></script><script src="./album.js"></script><script src="./love-effects.js"></script><script src="./surprises.js"></script><script src="./romantic-details.js"></script><script src="./app.js"></script>
+</body>
+</html>

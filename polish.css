@@ -1,0 +1,539 @@
+/*
+ * MỘT CHÚT THƯƠNG — bản trau chuốt giao diện.
+ * Màu sắc: mục 01. Cỡ chữ: mục 02. Hiệu ứng: mục 09.
+ * Nội dung, ảnh và nhạc vẫn lấy từ config.js của bạn.
+ */
+
+/* 01. Bảng màu — hồng phấn, kem ấm, tím mận. */
+:root {
+  --sans: 'Letter Sans', 'Gift Sans', Arial, sans-serif;
+  --serif: 'Letter Serif', 'Gift Serif', Georgia, serif;
+  --night: #201620;
+  --ink: #fff5ed;
+  --muted: #d4bbc9;
+  --pink: #f0b8cd;
+  --rose-light: #f0b8cd;
+  --gold-light: #e9cea7;
+  --paper: #fff8ef;
+  --paper-tint: #fff8ef;
+  --paper-ink: #684451;
+  --paper-muted: #805d69;
+  --paper-rose: #9d4d6b;
+  --accent-deep: #833951;
+  --line: #edb9cb2b;
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --ease-soft: cubic-bezier(.22, .61, .36, 1);
+}
+
+body {
+  background-color: var(--night);
+  background-image: radial-gradient(ellipse at 6% 5%, #8b405331, transparent 48%),
+    radial-gradient(ellipse at 94% 60%, #79618e26, transparent 52%),
+    radial-gradient(ellipse at 45% 100%, #ac745218, transparent 50%);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.8;
+  letter-spacing: .005em;
+}
+body[data-theme=lavender] {
+  --night: #211a2c; --pink: #dcc1ee; --rose-light: #dcc1ee;
+  --gold-light: #e9d8bd; --paper-tint: #fcf6ff;
+  --accent-deep: #6b426e;
+}
+body[data-theme=peach] {
+  --night: #2b1b21; --pink: #f4c0b3; --rose-light: #f4c0b3;
+  --gold-light: #efdab3; --paper-tint: #fff7eb;
+  --accent-deep: #8e483d;
+}
+::selection { background: #d98fae70; color: #fffaf3; }
+.noise { opacity: .022; }
+.aurora { opacity: .32; filter: blur(55px); }
+.aurora-rose { background: radial-gradient(ellipse, #c579983b, transparent 68%); }
+.aurora-gold { background: radial-gradient(ellipse, #c1a3d02b, transparent 70%); }
+
+/* 02. Hệ chữ chung. Chữ nghiêng dùng phông riêng, không ép nghiêng nét. */
+h1, h2 { font-family: var(--serif); font-weight: 400; letter-spacing: -.025em; text-wrap: balance; }
+h1, h2, p, figcaption, button { overflow-wrap: break-word; }
+em { font-family: var(--serif); }
+button, input, textarea, select { font-family: var(--sans); }
+button { font-weight: 700; }
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 3px solid var(--pink); outline-offset: 5px;
+}
+.eyebrow, .welcome-eyebrow, .garden-overline, .surprise-kicker, .letter-overline {
+  font-family: var(--sans); font-size: 11px; line-height: 1.9;
+  letter-spacing: .16em; font-weight: 700;
+}
+.signature, .surprise-signature, .letter-sign .signature {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  letter-spacing: -.015em; line-height: 1.6;
+}
+.signature { font-size: 30px; }
+.page { width: 100%; max-width: 1320px; padding: 34px 56px 24px; }
+main { padding-top: 64px; padding-bottom: 44px; }
+.footer { padding-top: 24px; font-size: 12px; line-height: 1.8; border-color: var(--line); color: #c7a9ba; }
+
+/* 03. Màn mở thiệp: giữ phong bì và bố cục bạn đã chọn. */
+.welcome-scene { max-width: 1320px; padding: 36px 60px 28px; --welcome-rose: var(--pink); }
+.welcome-masthead { padding-bottom: 22px; border-bottom: 1px solid #edb9cb17; }
+.welcome-wordmark { font-size: 29px; }
+.welcome-masthead > span:last-child { color: #c8aabb; font-size: 10px; letter-spacing: .18em; }
+.welcome-stage { gap: 44px; padding: 44px 0 48px; }
+.welcome-recipient { font-size: 14px; padding: 8px 16px; border-color: #edb9cb32; background: #f2bed409; margin-bottom: 24px; }
+.welcome-eyebrow { font-size: 10px; color: #caa8bc; margin-bottom: 16px; }
+.welcome-title { font-size: clamp(43px, 5.2vw, 68px); line-height: 1.17; letter-spacing: -.035em; margin-bottom: 26px; }
+.welcome-title > em { padding: .05em .12em .13em 0; line-height: 1.2; }
+.welcome-message { font-size: 17px; line-height: 1.85; max-width: 470px; color: #deccd4; margin-bottom: 31px; }
+.welcome-button {
+  min-height: 62px; border-radius: 16px; padding: 16px 25px; font-size: 17px;
+  background: linear-gradient(115deg, #ffe0df, #efb4c9 68%, #d794af);
+  color: #633044; border-color: #ffe5e5a8;
+  box-shadow: 0 12px 35px #c87a9c25, inset 0 1px #fff9f1b0;
+}
+.welcome-button::before { animation-duration: 9s; }
+.welcome-button-arrow { transition: transform .4s var(--ease-out); }
+.welcome-button:hover .welcome-button-arrow { transform: translate(3px, -3px); }
+.welcome-audio-note { font-size: 13px; color: #c8a9bc; margin-top: 18px; }
+.welcome-signature { font-size: 15px; line-height: 1.8; color: #c6a4ba; margin-top: 25px; max-width: 460px; }
+.welcome-signature span { color: #f2cad9; font-style: italic; }
+.welcome-visual { height: clamp(420px, 42vw, 530px); }
+.welcome-orbit { border-color: #edbfd32b; }
+.welcome-envelope { filter: drop-shadow(0 27px 32px #110a1e50); }
+.welcome-card-title { font-size: 40px; font-style: italic; }
+.welcome-card-line { font-size: 15px; letter-spacing: .5px; }
+.welcome-little-note { border-radius: 12px; padding: 14px 20px; box-shadow: 0 15px 40px #10071930; }
+.welcome-little-note p { font-size: 14px; line-height: 1.65; }
+.welcome-little-note em { font-size: 18px; color: #98496c; }
+.welcome-footer { font-size: 13px; color: #c0a1b3; gap: 19px; }
+
+/* 04. Lời chúc và album: chữ thoáng, chú thích luôn nằm ngoài ảnh. */
+.header { padding-bottom: 16px; border-bottom: 1px solid #edb9cb19; }
+.wordmark { font-size: 29px; }
+.wordmark-note { font-size: 12px; letter-spacing: .04em; }
+.music-player { padding: 8px 16px 8px 9px; gap: 10px; background: #4e31414a; border-color: #ecc2d130; box-shadow: 0 8px 28px #0d071816; }
+.icon-button { width: 42px; height: 42px; }
+.track { font-size: 14px; min-width: 130px; }
+.track-status { font-size: 11px; color: #cdb0c1; }
+.volume-wrap { font-size: 12px; }
+.volume-wrap input { width: 72px; }
+.volume-icon { width: 30px; }
+.audio-feedback { font-size: 12px; padding-top: 5px; }
+.wish-scene { gap: 30px 42px; grid-template-columns: minmax(0, 1.18fr) minmax(0, 1fr); }
+.wish-copy .eyebrow { font-size: 11px; letter-spacing: .13em; margin-bottom: 21px; }
+.wish-copy .recipient { font-family: var(--serif); font-size: 21px; margin-bottom: 17px; }
+.wish-copy h1 { font-size: clamp(37px, 4.2vw, 55px); line-height: 1.22; max-width: 19ch; margin-bottom: 27px; padding-bottom: .06em; }
+.wish-message { font-size: 17px; line-height: 1.9; color: #e4d0da; }
+.wish-message p { margin-bottom: 18px; }
+.sender { margin-top: 28px; gap: 14px; font-size: 12px; color: #c5a7bc; }
+.primary {
+  position: relative; isolation: isolate; min-height: 54px; padding: 15px 25px;
+  font-size: 16px; line-height: 1.7; color: #603044; border-radius: 14px;
+  background: linear-gradient(115deg, #ffdedf, #eeb4c9);
+  box-shadow: 0 9px 28px #cd789e20, inset 0 1px #fff8f3a0;
+  border: 1px solid #fbd4e08a;
+  transition: box-shadow .35s, background .35s, transform .35s var(--ease-out);
+}
+.primary:hover { transform: translateY(-2px); background: #f8cbd9; box-shadow: 0 13px 36px #cd789e35; }
+.primary:active { transform: translateY(0); }
+.primary:disabled { transform: none; }
+.special-action { padding-top: 28px; }
+.little-note { font-size: 19px; color: #e9c3d5; margin-bottom: 19px; }
+.special-button { max-width: 650px; gap: 16px; }
+.shared-album-slot { padding: 22px 34px 18px; }
+.memory-portrait { max-width: 365px; }
+.album-frame { padding: 13px 13px 17px; border-radius: 17px 17px 24px 17px; border: 1px solid #fff5ebc9; box-shadow: 0 26px 70px #0f07183d, 0 0 0 1px #f1c7d82e; }
+.album-frame .photo-content { border-radius: 8px; }
+.album-frame figcaption, .letter-scene .photo-frame figcaption {
+  font-family: var(--serif); font-size: 16px; font-style: italic; color: #88536b;
+  margin: 16px 2px 11px; padding: 0 9px; min-height: 58px; height: auto; line-height: 1.65;
+}
+.album-tools { grid-template-columns: 36px minmax(0, 1fr) 36px 36px; padding: 0 0 5px; gap: 3px; }
+.album-tools > button { width: 36px; min-width: 36px; height: 40px; font-size: 18px; color: #945671; background: #b67a9610; border-radius: 50%; }
+.album-tools > button:hover { background: #b67a9629; }
+.album-dots > button { height: 40px; min-width: 6px; }
+.album-time { margin: 0 12px 4px; }
+.album-edition { font-size: 10px; letter-spacing: .08em; }
+.album-count { font-size: 12px; }
+.photo-glass { opacity: .55; animation-duration: 16s; }
+.frame-comet { animation-duration: 15s; stroke-width: 1.7; }
+.memory-portrait .floating-keepsake { padding: 12px 20px; border-radius: 13px; margin-top: 25px; background: #fff5f0ec; }
+.memory-portrait .floating-keepsake > span { font-size: 13px; line-height: 1.65; color: #956a7d; }
+.memory-portrait .floating-keepsake em { font-size: 17px; color: #9d526f; }
+.frame-floral { opacity: .8; }
+.ribbon-card { border-radius: 5px; box-shadow: 0 8px 22px #0f071b2b; }
+.ribbon-heart { color: #a35c7c; }
+
+/* 05. Lá thư chính — giấy ấm, dấu sáp, khoảng thở để đọc. */
+.letter-masthead { max-width: 880px; margin: 0 auto 44px; }
+.letter-masthead .eyebrow { font-size: 11px; letter-spacing: .17em; margin-top: 15px; }
+.letter-masthead h2 { font-size: clamp(33px, 3.7vw, 45px); line-height: 1.3; color: #f5d9e6; margin: 14px auto 22px; }
+.letter-art-pair { gap: 26px; }
+.letter-keepsake { filter: drop-shadow(0 10px 20px #e1a1bb16); }
+.letter-photo-ribbon { margin-top: 20px; }
+.letter-layout { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 40px; }
+.letter-paper {
+  padding: 48px 42px 34px; border-radius: 15px 15px 35px 15px;
+  background: radial-gradient(ellipse at 95% 0, #efd2d63d, transparent 45%), var(--paper);
+  border: 1px solid #fff2e7; color: var(--paper-ink);
+  box-shadow: 0 24px 70px #10081d30, 0 0 0 1px #d8a9b72b;
+}
+.letter-paper::before { inset: 11px; border: 1px solid #cb98a33b; border-radius: 8px 8px 28px 8px; }
+.letter-paper::after { width: 49px; height: 49px; top: -24px; left: calc(50% - 24px); background: linear-gradient(145deg, #d892ac, #ad6083); border-color: #f3c4d3a0; box-shadow: 0 9px 24px #91496b27; }
+.letter-paper h2 { font-size: clamp(29px, 2.8vw, 37px); line-height: 1.4; color: var(--paper-rose); margin: 16px 0 29px; }
+.letter-body { font-size: 17px; line-height: 1.95; color: var(--paper-ink); }
+.letter-body p { margin-bottom: 23px; }
+.letter-sign { margin-top: 27px; margin-bottom: 25px; }
+.letter-sign .signature, .letter-sign > span:last-child { font-size: 33px; line-height: 1.5; color: #a25876; }
+.letter-next { min-height: 52px; border-radius: 13px; padding: 12px 20px; font-size: 16px; line-height: 1.6; background: #eabac839; color: #8b425f; border-color: #d499ad4a; transition: background .3s, transform .3s; }
+.letter-next:hover { background: #eabac86b; transform: translateY(-1px); }
+.letter-album-slot { top: 35px; padding-top: 18px; }
+.envelope-caption { font-size: 20px; }
+
+/* 06. Vườn hoa — mỗi lá thư có một vị trí rõ ràng. */
+.letter-garden-panel { padding: 10px 0 30px; }
+.letter-garden-panel .garden-heading { margin-bottom: 36px; }
+.letter-garden-panel .garden-heading h2 { font-size: clamp(34px, 4vw, 49px); line-height: 1.25; margin: 17px 0 24px; }
+.letter-garden-panel .garden-heading h2 em { color: var(--pink); }
+.garden-overline { font-size: 11px; letter-spacing: .13em; color: #c7a6bb; }
+.garden-message, .closing-text { font-size: 16px; line-height: 1.9; color: #dbc0cf; max-width: 650px; }
+.garden-bed { padding: 25px 25px 22px; border-radius: 25px; border-color: #dca7c343; background: radial-gradient(ellipse at 50% 0, #e5b6ca0d, transparent 65%), #dec6dc05; box-shadow: 0 22px 75px #11091a17, inset 0 1px #ffe9ed0d; }
+.garden-bed::before { inset: 8px; border-color: #eec8db15; }
+.garden-bed-heading { padding: 0 8px 24px; font-size: 11px; letter-spacing: .08em; color: #d2b5c8; }
+.garden-bed-heading > span:last-child { font-size: 13px; color: #f3cada; }
+.garden-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 23px 12px; }
+.garden-flower { padding: 8px 3px 14px; border-radius: 16px; border: 1px solid transparent; transition: background .6s, border-color .6s; }
+.garden-flower[data-current=true] { background: linear-gradient(#e4a7c208, #e4a7c211); border-color: #edb9cb29; }
+.garden-flower[data-read=true] { background: #e4a7c205; }
+.garden-flower figcaption { flex-direction: column; align-items: center; justify-content: flex-start; gap: 6px; font-size: 15px; line-height: 1.55; min-height: 82px; padding: 5px 3px 0; color: #dec0d1; }
+.garden-flower figcaption b { font-size: 11px; letter-spacing: .13em; color: #efb9cd; }
+.garden-flower figcaption > span { display: block; overflow: visible; -webkit-line-clamp: unset; }
+.garden-letter-number { font-size: 12px; }
+.garden-after > p:first-child { font-size: 19px; line-height: 1.9; color: #dbb9ce; }
+.smile-note, .gift-journey { font-size: 14px; line-height: 1.9; color: #c9a7bd; }
+.replay { font-size: 14px; padding: 14px; color: #ceb0c1; }
+.secret-copy { font-size: 14px; }
+.secret-restart:hover .secret-copy, .secret-restart:focus-visible .secret-copy { max-width: 320px; }
+.letter-garden-keepsakes { padding-top: 28px; border-top: 1px solid #edb9cb1c; margin-top: 25px; }
+.letter-garden-bouquet > p { font-family: var(--serif); font-size: 18px; color: #ddbbcf; }
+
+/* 07. Mười hai lá thư — hình bên trái, giấy viết bên phải. */
+.surprise-dialog { width: min(1180px, calc(100% - 40px)); max-height: calc(100svh - 36px); border-radius: 26px; border-color: #e4b9ce4a; scrollbar-width: thin; scrollbar-color: #b988a1 #2e2030; background-image: radial-gradient(ellipse at 5% 15%, var(--gift-halo), transparent 65%); }
+.surprise-dialog::backdrop, .garden-photo-dialog::backdrop { background: #180f1cdd; backdrop-filter: blur(10px); }
+.surprise-header { padding: 15px 28px; background: #2c1c2eef; border-color: #ecc4d420; }
+.surprise-header > span { font-size: 11px; letter-spacing: .13em; color: #ecc4d4; }
+.surprise-header > div { gap: 10px; }
+.surprise-close, .surprise-audio { min-width: 44px; height: 44px; }
+.surprise-audio { min-width: 62px; font-size: 15px; }
+.letter-progress { display: flex; align-items: center; gap: 7px; padding: 0; margin: 22px 38px 0; height: 7px; }
+.letter-progress > span { flex: 1; height: 3px; border-radius: 8px; background: #edbfd325; transition: background .6s, transform .6s, box-shadow .6s; }
+.letter-progress > span[data-read=true] { background: #e8b5cb; box-shadow: 0 0 9px #e8b5cb21; }
+.letter-progress > span[data-current=true] { background: #f8e6d0; transform: scaleY(1.7); box-shadow: 0 0 12px #f8d4dc3b; }
+.surprise-stage { grid-template-columns: minmax(0, .9fr) minmax(0, 1.2fr); padding: 40px 38px 32px; gap: 35px; }
+.surprise-visual { position: relative; top: 0; padding-top: 28px; min-height: 400px; justify-content: flex-start; }
+.surprise-opening { top: 0; bottom: auto; left: 0; right: 0; font-size: 15px; line-height: 1.8; padding: 0; }
+.surprise-visual-note { font-size: 17px; line-height: 1.8; max-width: 320px; padding: 16px 10px; color: #e8c4d7; }
+.surprise-art { max-width: 335px; }
+#surpriseDialog .surprise-letter {
+  padding: 30px 32px 28px; background: radial-gradient(ellipse at 90% 0, #f0dce055, transparent 50%), #fff8ef;
+  border: 1px solid #e4b9c56b; border-radius: 15px 15px 32px 15px;
+  color: var(--paper-ink); box-shadow: 0 20px 48px #130a1e25; isolation: isolate;
+}
+#surpriseDialog .surprise-letter::before { content: ''; position: absolute; inset: 9px; border: 1px solid #c795a52b; border-radius: 8px 8px 25px 8px; pointer-events: none; }
+#surpriseDialog .surprise-kicker { color: #995e75; font-size: 10px; letter-spacing: .13em; margin-bottom: 18px; }
+#surpriseDialog .surprise-letter h2 { font-size: clamp(28px, 3vw, 37px); line-height: 1.3; color: #934b68; margin-bottom: 23px; }
+#surpriseDialog .surprise-greeting { font-family: var(--serif); font-size: 21px; color: #a05f79; line-height: 1.7; margin-bottom: 20px; }
+#surpriseDialog .surprise-message { font-size: 17px; line-height: 1.95; color: #674753; }
+#surpriseDialog .surprise-message p { margin-bottom: 21px; }
+#surpriseDialog .surprise-message p:last-child { margin-bottom: 0; }
+#surpriseDialog .surprise-signature { position: relative; font-size: 30px; color: #a15776; line-height: 1.6; margin-top: 25px; padding-bottom: 9px; }
+#surpriseDialog .surprise-signature::after { content: ''; position: absolute; height: 1px; width: 85px; bottom: 2px; right: 0; background: linear-gradient(90deg, transparent, #c38a9b80); transform-origin: right; }
+.surprise-footer { padding: 23px 30px 27px; gap: 14px; border-color: #ecc4d421; }
+.surprise-footer .primary { font-size: 16px; padding: 14px 24px; border-radius: 14px; max-width: 100%; }
+.surprise-back { font-size: 14px; color: #d6b5ca; min-height: 44px; padding: 10px 12px; }
+.journey-page { font-size: 13px; color: #e0b9cf; }
+.invitation-hint { font-size: 15px; line-height: 1.8; max-width: 550px; }
+.journey-photo-ribbon { max-width: 100%; margin-top: 16px; }
+.surprise-sparkles { z-index: -1; opacity: .55; }
+.surprise-sparkles > span { text-shadow: 0 0 12px #d8a6c22b; }
+
+/* 08. Lời hẹn — một ảnh riêng, một lá thư riêng. */
+#surpriseDialog[data-mode=invitation] {
+  --gift-accent: #ad6885;
+  background: radial-gradient(ellipse at 15% 20%, #efccd9b0, transparent 58%), #f5e7df;
+  color: #744456; border-color: #e7bdc9; scrollbar-color: #c49ba9 #f2e1dd;
+}
+#surpriseDialog[data-mode=invitation] .surprise-header { background: #f8eee6f2; border-color: #c79ba63b; }
+#surpriseDialog[data-mode=invitation] .surprise-header > span { font-size: 11px; color: #8e536b; }
+#surpriseDialog[data-mode=invitation] .surprise-close, #surpriseDialog[data-mode=invitation] .surprise-audio { color: #8b4b67; border-color: #c590a447; background: #fff9f34d; }
+#surpriseDialog[data-mode=invitation] .surprise-stage { grid-template-columns: minmax(0, .83fr) minmax(0, 1.3fr); padding: 38px 35px 35px; gap: 36px; }
+#surpriseDialog[data-mode=invitation] .surprise-visual { padding-top: 28px; top: 0; min-height: 0; }
+#surpriseDialog[data-mode=invitation] .letter-progress > span { background: #bd8d9e25; }
+#surpriseDialog[data-mode=invitation] .letter-progress > span[data-read=true] { background: #ba849b; }
+#surpriseDialog[data-mode=invitation] .surprise-opening { font-size: 15px; color: #966078; }
+.invitation-snapshot { width: min(100%, 320px); border-radius: 12px 12px 25px 12px; padding: 18px 15px 18px; margin-top: 15px; box-shadow: 0 21px 45px #94577320, 0 0 0 1px #c598a52e; }
+.invitation-snapshot button { border-radius: 6px; }
+.snapshot-overline { font-family: var(--sans); font-size: 9px; letter-spacing: .1em; line-height: 1.8; color: #9b6377; padding: 6px 7px 16px; }
+.invitation-snapshot figcaption { font-size: 17px; font-style: italic; line-height: 1.65; color: #9a586f; margin: 16px 7px 2px; }
+.snapshot-ribbon { width: 88px; height: 28px; left: calc(50% - 44px); background: #dca4b6b8; }
+.snapshot-floral { right: -27px; width: 80px; top: 57%; }
+#surpriseDialog[data-mode=invitation] #surpriseArt { max-width: 220px; height: 205px; margin: 27px auto 76px; }
+#surpriseDialog[data-mode=invitation] .party-art-caption { top: calc(100% + 10px); bottom: auto; font-size: 18px; line-height: 1.6; color: #995e77; }
+#surpriseDialog[data-mode=invitation] .party-art-caption em { font-size: 15px; color: #8f6277; }
+#surpriseDialog[data-mode=invitation] .surprise-visual-note { font-size: 17px; line-height: 1.8; color: #8a5b70; margin: 0 auto; padding-top: 9px; }
+#surpriseDialog[data-mode=invitation] .surprise-letter { padding: 35px 32px 29px; border-radius: 15px 15px 35px 15px; border-color: #cf9ca94f; background: radial-gradient(ellipse at 95% 0, #f1dbe044, transparent 55%), #fffaf2; box-shadow: 0 21px 50px #aa738a14; }
+#surpriseDialog[data-mode=invitation] .surprise-kicker { color: #9b6177; font-size: 10px; letter-spacing: .12em; margin-bottom: 19px; }
+#surpriseDialog[data-mode=invitation] .surprise-letter h2 { font-size: clamp(31px, 3.3vw, 41px); line-height: 1.25; color: #9d526f; margin-bottom: 27px; }
+#surpriseDialog[data-mode=invitation] .surprise-greeting { font-size: 22px; color: #9a5d75; }
+#surpriseDialog[data-mode=invitation] .surprise-message { font-size: 17px; line-height: 1.95; color: #684753; }
+#surpriseDialog[data-mode=invitation] .surprise-message p { margin-bottom: 24px; }
+#surpriseDialog[data-mode=invitation] .surprise-signature { font-size: 32px; color: #a15776; }
+#surpriseDialog[data-mode=invitation] .surprise-footer { border-color: #bf91a237; padding: 25px 28px 30px; }
+#surpriseDialog[data-mode=invitation] .surprise-footer .primary { color: #fff8ef; background: linear-gradient(115deg, #9f5274, #b77791); font-size: 17px; border-color: #d09bad; box-shadow: 0 11px 25px #ad6a8625, inset 0 1px #e8bdd057; }
+#surpriseDialog[data-mode=invitation] .surprise-footer .primary:hover { background: #9e5576; box-shadow: 0 14px 31px #ad6a8638; }
+#surpriseDialog[data-mode=invitation] .surprise-back { font-size: 14px; color: #8b536c; }
+#surpriseDialog[data-mode=invitation] .journey-page { font-size: 14px; color: #8e5a70; }
+#surpriseDialog[data-mode=invitation] .party-reply { background: #fff8ef; border-color: #cda1b153; color: #8e4d69; font-size: 23px; line-height: 1.65; padding: 23px; border-radius: 16px; }
+.party-details { margin-top: 27px; padding: 5px 0; border-color: #b8879c33; }
+.party-details > div { grid-template-columns: 105px minmax(0, 1fr); gap: 15px; padding: 15px 0; }
+.party-details dt { font-size: 14px; color: #96667c; }
+.party-details dd { font-size: 20px; line-height: 1.6; color: #8c4e6b; }
+.garden-photo-dialog { background: #2b1d2c; border-color: #d9a5c04d; border-radius: 23px; }
+.garden-photo-dialog header { padding: 20px 24px; }
+.garden-photo-dialog header h2 { font-size: 25px; }
+.garden-photo-dialog header p { font-size: 10px; }
+.garden-photo-dialog button { min-width: 44px; min-height: 44px; font-size: 15px; }
+.garden-photo-caption { font-family: var(--serif); font-style: italic; font-size: 20px; line-height: 1.65; padding: 0 24px; }
+.garden-photo-dialog footer { font-size: 14px; padding: 15px 24px 22px; }
+
+/* 09. Chuyển động: chậm khi ngắm, rõ khi chạm, không chạy đè lên chữ. */
+.scene:not([hidden]) { animation: keepsakeSceneIn .85s var(--ease-out) both; }
+.letter-paper { animation: keepsakePaperIn 1.05s var(--ease-out) both; }
+.surprise-stage[data-phase=revealed] .surprise-letter { animation: keepsakePaperIn .85s var(--ease-out) both; }
+.surprise-stage[data-phase=revealed] .surprise-message p { animation: keepsakeWordsIn .7s var(--ease-soft) both; animation-delay: var(--paragraph-delay, 0s); }
+.surprise-stage[data-phase=closing] .surprise-letter { animation: keepsakePaperClose .45s var(--ease-soft) both; }
+.surprise-stage[data-phase=revealed] .surprise-signature::after { animation: keepsakeSignature 1.1s .65s both; }
+.romance-particle { animation: keepsakePetal var(--heart-life, 2.1s) var(--heart-delay) var(--ease-soft) both; color: var(--pink); }
+.love-moment .romance-particle { color: var(--gift-accent); }
+.romance-particle[data-kind=reply] { text-shadow: 0 0 18px #e79db850; }
+.portrait-motion { animation-duration: 10s; }
+.memory-slide > img { animation-name: keepsakePhotoPan; animation-duration: 14s; }
+.garden-flower[data-phase=bloomed] .flower-frame { animation-duration: 8s; }
+.surprise-letter, .letter-paper, .album-frame, .invitation-snapshot { backface-visibility: hidden; }
+@keyframes keepsakeSceneIn { from { opacity: 0; transform: translateY(19px); } to { opacity: 1; transform: none; } }
+@keyframes keepsakePaperIn { from { opacity: 0; transform: translateY(24px) rotate(.8deg); } to { opacity: 1; transform: translateY(0) rotate(0); } }
+@keyframes keepsakeWordsIn { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes keepsakePaperClose { to { opacity: 0; transform: translateY(-12px) rotate(-.5deg); } }
+@keyframes keepsakeSignature { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes keepsakePhotoPan { from { transform: scale(1.015) translateY(0); } to { transform: scale(1.055) translateY(-.4%); } }
+@keyframes keepsakePetal {
+  0% { opacity: 0; transform: translate(0, 12px) scale(.4) rotate(-10deg); }
+  18% { opacity: .8; }
+  75% { opacity: .55; }
+  100% { opacity: 0; transform: translate(var(--heart-drift), calc(-1 * var(--heart-rise))) scale(1.1) rotate(var(--heart-turn, 28deg)); }
+}
+
+/* 10. Trang chuẩn bị: cùng bộ chữ, các ô nhập dễ đọc và dễ chạm hơn. */
+.studio-page { max-width: 1260px; padding-top: 35px; }
+.studio-brand { font-size: 29px; }
+.studio-top a { font-size: 15px; padding: 11px 18px; }
+.studio-heading h1 { font-size: clamp(35px, 4vw, 47px); line-height: 1.25; }
+.studio-heading p:not(.eyebrow) { font-size: 17px; line-height: 1.8; }
+.studio-layout { gap: 32px; }
+.studio-section { background: linear-gradient(145deg, #d4a4c40b, #d4a4c404); border-color: #d4a4c427; padding: 29px; border-radius: 20px; }
+.studio-section h2 { font-family: var(--sans); font-size: 20px; }
+.studio-section h2 > span { width: 33px; height: 33px; font-size: 12px; }
+.section-note, .studio-help, .studio-status, .studio-instructions { font-size: 14px; line-height: 1.8; color: #ccb1c3; }
+.studio-form label { font-size: 16px; color: #e4c4d6; }
+.studio-form input:not([type=range]):not([type=file]), .studio-form textarea, .studio-form select { font-size: 16px; line-height: 1.65; padding: 12px 14px; border-color: #cfa3c032; background: #180f1f73; border-radius: 11px; }
+.studio-form input:focus, .studio-form textarea:focus, .studio-form select:focus { border-color: #e6b3ce; }
+.studio-drop b { font-size: 16px; }
+.studio-drop small { font-size: 13px; line-height: 1.8; }
+.studio-form .editor-card label { font-size: 13px; }
+.studio-form .editor-card input:not([type=range]), .studio-form .editor-card select { font-size: 14px !important; line-height: 1.7 !important; padding: 9px !important; }
+.editor-actions button { min-width: 38px; width: 38px; height: 38px; font-size: 15px; }
+.gallery-toolbar span, .plain-button { font-size: 14px; }
+.plain-button { min-height: 42px; }
+.editor-card { padding: 11px; border-color: #d1a4c337; }
+.mini-caption { font-size: 16px; line-height: 1.65; font-style: italic; color: #945b75; }
+.preview-name { font-size: 29px; }
+.preview-note { font-size: 15px; line-height: 1.8; }
+.preview-kicker, .preview-chapters { font-size: 11px; }
+.studio-submit .primary { font-size: 17px; padding: 14px 25px; }
+.studio-submit > p, .party-preview-link { font-size: 15px; }
+.invitation-photo-editor h3 { font-size: 18px; }
+.invitation-photo-editor-grid label { font-size: 14px; }
+.studio-form .invitation-photo-editor-grid input:not([type=file]), .studio-form .invitation-photo-editor-grid select { font-size: 15px !important; }
+.studio-invitation-preview figcaption { font-size: 14px; line-height: 1.7; }
+.invitation-photo-editor .studio-help, .invitation-photo-editor .studio-status { font-size: 14px; }
+
+/* 11. Máy tính bảng và màn hình nhỏ. */
+@media (max-width: 1000px) {
+  .welcome-scene { padding: 28px 35px 24px; }
+  .welcome-stage { gap: 20px; }
+  .welcome-title { font-size: clamp(41px, 5vw, 56px); }
+  .welcome-message { font-size: 16px; }
+  .page { padding: 26px 32px 22px; }
+  .wish-scene { gap: 27px; }
+  .wish-copy h1 { font-size: 40px; }
+  .wish-message { font-size: 16px; }
+  .shared-album-slot { padding-left: 22px; padding-right: 22px; }
+  .letter-layout { gap: 25px; }
+  .letter-paper { padding: 42px 30px 28px; }
+  .letter-body { font-size: 16px; }
+  .garden-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px 13px; }
+  .surprise-stage { padding: 35px 25px 28px; gap: 24px; }
+  #surpriseDialog .surprise-letter { padding: 28px 25px; }
+  #surpriseDialog .surprise-message { font-size: 16px; }
+  #surpriseDialog[data-mode=invitation] .surprise-stage { padding: 32px 26px; gap: 25px; }
+  #surpriseDialog[data-mode=invitation] .surprise-letter { padding: 30px 25px; }
+  #surpriseDialog[data-mode=invitation] .surprise-message { font-size: 16px; }
+  .studio-page { padding-left: 24px; padding-right: 24px; }
+  .studio-section { padding: 24px; }
+}
+@media (max-width: 740px) {
+  .welcome-scene { padding: 23px 25px 24px; }
+  .welcome-masthead { padding-bottom: 16px; }
+  .welcome-wordmark { font-size: 25px; }
+  .welcome-masthead > span:last-child { font-size: 9px; letter-spacing: .1em; }
+  .welcome-stage { grid-template-columns: minmax(0, 1fr); gap: 20px; padding: 34px 0 28px; }
+  .welcome-copy { max-width: 540px; margin: auto; width: 100%; }
+  .welcome-recipient { font-size: 13px; margin-bottom: 22px; }
+  .welcome-title { font-size: clamp(42px, 8.3vw, 56px); line-height: 1.17; margin-bottom: 22px; }
+  .welcome-eyebrow { font-size: 9px; }
+  .welcome-message { font-size: 17px; max-width: 100%; line-height: 1.8; }
+  .welcome-button { font-size: 17px; padding: 15px 20px; min-height: 58px; }
+  .welcome-signature { font-size: 15px; margin-top: 22px; }
+  .welcome-visual { height: 350px; max-width: 430px; margin: 6px auto 0; }
+  .welcome-envelope-wrap { inset: -3% 0 0; }
+  .welcome-little-note { left: 4%; bottom: 0; }
+  .welcome-little-note p { font-size: 13px; }
+  .welcome-little-note em { font-size: 17px; }
+  .welcome-footer { font-size: 12px; gap: 14px; }
+  .page { padding: 21px 23px 24px; }
+  main { padding: 40px 0 30px; }
+  .header { gap: 14px; }
+  .wordmark { font-size: 25px; }
+  .wordmark-note { font-size: 10px; }
+  .music-player { padding: 6px 9px; gap: 5px; }
+  .track { display: none; }
+  .icon-button { width: 38px; height: 40px; }
+  .volume-icon { width: 25px; }
+  .volume-wrap { gap: 5px; font-size: 11px; }
+  .volume-wrap input { width: 53px; }
+  .volume-wrap output { min-width: 27px; }
+  .wish-scene { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .wish-copy h1 { font-size: clamp(37px, 7.5vw, 47px); max-width: 20ch; margin-bottom: 24px; }
+  .wish-message { font-size: 17px; line-height: 1.85; }
+  .wish-copy .recipient { font-size: 20px; }
+  .wish-copy .eyebrow { font-size: 10px; }
+  .sender { font-size: 12px; }
+  .shared-album-slot { padding: 23px 30px 18px; }
+  .memory-portrait { max-width: 330px; }
+  .album-frame figcaption, .letter-scene .photo-frame figcaption { font-size: 16px; min-height: 58px; line-height: 1.6; padding: 0 5px; }
+  .primary, .surprise-footer .primary { font-size: 16px; padding: 14px 19px; }
+  .special-button { gap: 11px; }
+  .special-action { padding-top: 15px; }
+  .letter-layout { display: flex; flex-direction: column; gap: 36px; }
+  .letter-writing { width: 100%; order: 1; }
+  .letter-album-slot { order: 2; position: relative; top: auto; }
+  .letter-masthead h2 { font-size: 34px; line-height: 1.3; }
+  .letter-masthead .eyebrow { font-size: 10px; letter-spacing: .11em; }
+  .letter-paper { padding: 40px 27px 28px; border-radius: 13px 13px 28px 13px; }
+  .letter-paper h2 { font-size: 31px; line-height: 1.3; }
+  .letter-body { font-size: 17px; line-height: 1.9; }
+  .letter-next { font-size: 16px; }
+  .letter-sign .signature, .letter-sign > span:last-child { font-size: 31px; }
+  .letter-garden-panel .garden-heading h2 { font-size: 35px; line-height: 1.3; }
+  .garden-overline { font-size: 10px; }
+  .garden-bed { padding: 20px 12px 16px; }
+  .garden-bed-heading { flex-wrap: wrap; gap: 6px 14px; padding: 0 8px 17px; font-size: 10px; }
+  .garden-bed-heading > span:last-child { font-size: 12px; }
+  .garden-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px 5px; }
+  .garden-flower { padding: 6px 1px 11px; }
+  .garden-flower figcaption { font-size: 14px; line-height: 1.55; min-height: 90px; padding: 5px 4px 0; }
+  .garden-flower figcaption b { font-size: 10px; }
+  .garden-after > p:first-child { font-size: 18px; line-height: 1.8; }
+  .surprise-dialog { width: calc(100% - 18px); max-height: calc(100svh - 18px); border-radius: 20px; }
+  .surprise-header { padding: 12px 17px; gap: 10px; }
+  .surprise-header > span, #surpriseDialog[data-mode=invitation] .surprise-header > span { font-size: 10px; letter-spacing: .09em; }
+  .surprise-header > div { gap: 7px; }
+  .surprise-audio { min-width: 48px; font-size: 13px; }
+  .surprise-close { min-width: 42px; }
+  .letter-progress { margin: 17px 21px 0; gap: 5px; }
+  .surprise-stage { display: flex; flex-direction: column; padding: 28px 19px 25px; gap: 26px; }
+  .surprise-visual { position: relative; top: auto; min-height: 0; padding-top: 26px; width: 100%; }
+  .surprise-opening { font-size: 14px; }
+  .surprise-visual-note { font-size: 16px; line-height: 1.7; padding-top: 10px; padding-bottom: 12px; }
+  .surprise-art { max-width: 285px; height: 265px; }
+  .surprise-dialog[data-mode=flowers] .surprise-art { height: 290px; max-width: 310px; }
+  .surprise-dialog[data-mode=flowers] .surprise-visual { min-height: 0; }
+  #surpriseDialog .surprise-letter { padding: 29px 25px 25px; border-radius: 13px 13px 29px 13px; }
+  #surpriseDialog .surprise-letter h2 { font-size: 30px; line-height: 1.3; }
+  #surpriseDialog .surprise-greeting { font-size: 21px; }
+  #surpriseDialog .surprise-message { font-size: 17px; line-height: 1.9; }
+  #surpriseDialog .surprise-kicker { font-size: 10px; }
+  .surprise-footer { padding: 23px 21px; gap: 12px; }
+  .surprise-back { font-size: 14px; }
+  #surpriseDialog[data-mode=invitation] .surprise-stage { grid-template-columns: minmax(0, 1fr); padding: 28px 20px 25px; gap: 27px; }
+  #surpriseDialog[data-mode=invitation] .surprise-visual { padding-top: 27px; }
+  .invitation-snapshot { width: min(100%, 295px); padding: 17px 14px 17px; margin-top: 13px; }
+  .snapshot-overline { font-size: 9px; letter-spacing: .08em; padding-bottom: 14px; }
+  .invitation-snapshot figcaption { font-size: 17px; }
+  .snapshot-floral { right: -20px; width: 66px; }
+  #surpriseDialog[data-mode=invitation] #surpriseArt { width: 200px; height: 190px; margin-top: 22px; margin-bottom: 72px; }
+  #surpriseDialog[data-mode=invitation] .party-art-caption { font-size: 18px; }
+  #surpriseDialog[data-mode=invitation] .party-art-caption em { font-size: 15px; }
+  #surpriseDialog[data-mode=invitation] .surprise-visual-note { font-size: 17px; max-width: 300px; }
+  #surpriseDialog[data-mode=invitation] .surprise-letter { padding: 31px 25px 26px; }
+  #surpriseDialog[data-mode=invitation] .surprise-letter h2 { font-size: 33px; }
+  #surpriseDialog[data-mode=invitation] .surprise-message { font-size: 17px; line-height: 1.9; }
+  #surpriseDialog[data-mode=invitation] .surprise-kicker { font-size: 10px; }
+  #surpriseDialog[data-mode=invitation] .surprise-footer { padding: 23px 21px; }
+  #surpriseDialog[data-mode=invitation] .surprise-footer .primary { font-size: 16px; }
+  .party-details > div { grid-template-columns: 85px minmax(0, 1fr); gap: 12px; }
+  .party-details dt { font-size: 13px; }
+  .party-details dd { font-size: 19px; }
+  .footer { font-size: 11px; gap: 12px; }
+  .studio-page { padding: 23px 18px 40px; }
+  .studio-layout { grid-template-columns: minmax(0, 1fr); gap: 25px; }
+  .studio-aside { position: relative; top: auto; order: -1; padding-bottom: 20px; }
+  .studio-section { padding: 24px 20px; }
+  .studio-section h2 { font-size: 19px; }
+  .studio-grid { grid-template-columns: minmax(0, 1fr); }
+  .studio-heading p:not(.eyebrow) { font-size: 16px; }
+  .studio-form .editor-card input:not([type=range]), .studio-form .editor-card select { font-size: 16px !important; }
+  .studio-form .editor-card label { font-size: 13px; }
+  .studio-invitation-preview figcaption { font-size: 15px; }
+}
+@media (max-width: 390px) {
+  .welcome-scene, .page { padding-left: 19px; padding-right: 19px; }
+  .welcome-title { font-size: 42px; }
+  .welcome-masthead { gap: 12px; }
+  .welcome-masthead > span:last-child { max-width: 130px; }
+  .welcome-button { font-size: 16px; gap: 11px; padding-left: 17px; padding-right: 17px; }
+  .welcome-visual { height: 300px; }
+  .shared-album-slot { padding-left: 23px; padding-right: 23px; }
+  .album-tools { grid-template-columns: 30px minmax(0, 1fr) 30px 30px; gap: 1px; }
+  .album-tools > button { width: 30px; min-width: 30px; }
+  .letter-paper { padding-left: 23px; padding-right: 23px; }
+  .garden-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 12px; }
+  .garden-flower figcaption { min-height: 78px; }
+  #surpriseDialog .surprise-letter { padding-left: 23px; padding-right: 23px; }
+  #surpriseDialog[data-mode=invitation] .surprise-letter { padding-left: 23px; padding-right: 23px; }
+  #surpriseDialog[data-mode=invitation] .surprise-stage { padding-left: 16px; padding-right: 16px; }
+  .party-details > div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .album-editor { grid-template-columns: minmax(0, 1fr); }
+  .editor-card-preview { max-height: 340px; }
+}
+
+/* 12. Tôn trọng cài đặt giảm chuyển động và tab đang ẩn. */
+body[data-tab-hidden=true] *, body[data-tab-hidden=true] *::before, body[data-tab-hidden=true] *::after { animation-play-state: paused !important; }
+body[data-effects=quiet] .frame-comet, body[data-effects=quiet] .photo-glass { animation: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .scene:not([hidden]), .surprise-letter, .surprise-stage .surprise-message p, .letter-paper, .surprise-stage .surprise-signature { opacity: 1; transform: none; }
+  .surprise-stage[data-phase=closing] .surprise-letter { opacity: 1; }
+  .memory-slide > img, .invitation-snapshot button > img { transform: none; }
+  .secret-copy { transition: none; }
+}

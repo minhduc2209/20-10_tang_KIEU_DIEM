@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="welcome-envelope" viewBox="0 0 560 500" focusable="false">
+          <style>.welcome-card-title{font:italic 37px Georgia,serif;fill:#ab6f87}.welcome-card-line{font:12px Georgia,serif;fill:#ab8493;letter-spacing:1px}</style><defs><linearGradient id="welcome-paper" x2=".8" y2="1"><stop stop-color="#fffaf0"/><stop offset="1" stop-color="#edd6cf"/></linearGradient><linearGradient id="welcome-envelope-front" x2=".5" y2="1"><stop stop-color="#f4c7d0"/><stop offset="1" stop-color="#d596ad"/></linearGradient><linearGradient id="welcome-flap" x2=".4" y2="1"><stop stop-color="#f6d7dc"/><stop offset="1" stop-color="#ddadbd"/></linearGradient><radialGradient id="welcome-wax"><stop stop-color="#c787a4"/><stop offset="1" stop-color="#9e5579"/></radialGradient></defs>
+          <ellipse cx="280" cy="455" rx="190" ry="19" fill="#08071133"/>
+          <g class="welcome-envelope-body">
+            <rect x="71" y="197" width="418" height="240" rx="15" fill="#b77894"/>
+            <g class="welcome-insert-back" transform="rotate(8 280 250)"><rect x="112" y="115" width="346" height="270" rx="12" fill="#c7abc9"/><rect x="123" y="126" width="324" height="246" rx="7" fill="none" stroke="#eee0ec55"/></g>
+            <g class="welcome-insert"><g transform="rotate(-7 280 260)"><rect x="101" y="100" width="352" height="285" rx="12" fill="url(#welcome-paper)"/><rect x="113" y="112" width="328" height="260" rx="7" fill="none" stroke="#c899a24a"/><path d="M277 158C251 133 232 164 277 192C322 164 303 133 277 158Z" fill="#bd8099"/><text x="277" y="230" text-anchor="middle" class="welcome-card-title">gửi em,</text><text x="277" y="258" text-anchor="middle" class="welcome-card-line">một điều thật lòng ♡</text><path d="M220 284H334M245 300H309" stroke="#c49da1" stroke-width="1.4" stroke-linecap="round"/></g></g>
+            <path d="M71 204L280 345L489 204V422Q489 437 474 437H86Q71 437 71 422Z" fill="url(#welcome-envelope-front)"/>
+            <path d="M73 429L216 301M487 429L344 301" fill="none" stroke="#b87a934d" stroke-width="1.5"/>
+            <path class="welcome-envelope-flap" d="M72 201H488L291 344Q280 352 269 344Z" fill="url(#welcome-flap)" stroke="#e8b7c540"/>
+            <g class="welcome-wax"><circle cx="280" cy="339" r="35" fill="url(#welcome-wax)"/><circle cx="280" cy="339" r="28" fill="none" stroke="#edbed080"/><circle cx="280" cy="339" r="24" fill="none" stroke="#773c6230"/><path d="M280 331C262 314 247 337 280 358C313 337 298 314 280 331Z" fill="#f6d5df"/></g>
+          </g>
+          <g class="welcome-ribbon" fill="none" stroke="#e0b3c5" stroke-width="5" stroke-linecap="round"><path d="M427 112C390 75 368 110 427 112C464 75 486 110 427 112Z"/><path d="M423 113Q410 137 395 142M431 113Q442 138 461 142"/></g>
+        </svg>
